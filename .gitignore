@@ -1,0 +1,48 @@
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/.idea
+/.vscode
+
+# Ignore everything in the "wp-content" directory, except the "plugins"
+# and "themes" directories.
+/wordpress/wp-content/*
+!/wordpress/wp-content/plugins
+!/wordpress/wp-content/themes
+
+# Ignore everything in the "plugins" directory, except the plugins you
+# specify
+/wordpress/wp-content/plugins/*
+#!wp-content/plugins/consent-manager
+
+# Ignore everything in the "themes" directory, except the themes you
+# specify
+/wordpress/wp-content/themes/*
+
+
+## ignore node dependency directories
+node_modules/
+
+## ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+## Ignore intellij config
+.idea
+
+## In the Apple macOS operating system, .DS_Store is a file that stores custom attributes of its containing folder
+.DS_Store
+
+# Ignore mysql DB volume
+/docker/mysql/data/
