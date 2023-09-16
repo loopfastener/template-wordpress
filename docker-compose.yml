@@ -7,7 +7,7 @@ services:
     build:
       context: ./docker/php
       dockerfile: Dockerfile
-    container_name: lids_study_php
+    container_name: hebammen_php
     restart: unless-stopped
     tty: true
     environment:
@@ -22,16 +22,16 @@ services:
 
   #Nginx Service
   webserver:
-    platform: linux/x86_64
-    image: nginx:alpine
-    container_name: lids_study_web
+    platform: linux/amd64
+    image: nginx
+    container_name: hebammen_web
     restart: unless-stopped
     tty: true
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - ./:/var/www
+      - ./wordpress:/var/www
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
     networks:
       - app-network
@@ -39,8 +39,8 @@ services:
   #MySQL Service
   db:
     platform: linux/x86_64
-    image: mysql:5.7.22
-    container_name: lids_db
+    image: mysql:8.1
+    container_name: hebammen_db
     restart: unless-stopped
     tty: true
     ports:
